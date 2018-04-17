@@ -94,3 +94,17 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+// database backoffice
+$db['otherdb']['hostname'] = "localhost";
+$db['otherdb']['username'] = "root";
+$db['otherdb']['password'] = "";
+$db['otherdb']['database'] = "sms";
+$db['otherdb']['dbdriver'] = "mysqli";
+$db['otherdb']['dbprefix'] = "";
+$db['otherdb']['pconnect'] = FALSE;
+$db['otherdb']['db_debug'] = TRUE;
+$db['otherdb']['cache_on'] = FALSE;
+$db['otherdb']['cachedir'] = "";
+$db['otherdb']['char_set'] = "utf8";
+$db['otherdb']['dbcollat'] = "utf8_general_ci";

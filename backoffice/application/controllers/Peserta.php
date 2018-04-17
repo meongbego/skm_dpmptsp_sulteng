@@ -9,6 +9,7 @@ class Peserta extends CI_Controller
             redirect('auth');
         }
         else{
+            $this->load->model('Tahun_survei_model');
             $this->load->model('Peserta_model');
             $this->load->library('form_validation');
         }
@@ -16,15 +17,28 @@ class Peserta extends CI_Controller
 
     public function index()
     {
-        $peserta = $this->Peserta_model->get_all();
-
+        $tahun_survei = $this->Tahun_survei_model->get_all();
         $data = array(
-            'peserta_data' => $peserta
+            'tahun_survei_data' => $tahun_survei
         );
-        $data['site_title'] = 'Peserta';
-        $data['title'] = 'Peserta';
+        $data['site_title'] = 'Tahun Survey';
+        $data['title'] = 'Tahun Survey';
         $data['assign_js'] ='peserta/js/index.js';
-        load_view('peserta/tb_peserta_list', $data);
+        load_view('peserta/tahun_survei', $data);
+    }
+
+    public function PSurvei($tahun='')
+    {
+      $peserta = $this->Peserta_model->get_query("SELECT * FROM v_peserta_survei WHERE kode_tahun_survei='".$tahun."'")->result();
+      //echo json_encode($peserta);
+
+      $data = array(
+          'peserta_data' => $peserta
+      );
+      $data['site_title'] = 'Peserta';
+      $data['title'] = 'Peserta';
+      $data['assign_js'] ='peserta/js/index.js';
+      load_view('peserta/tb_peserta_list', $data);
     }
 
     public function read($id)
@@ -63,10 +77,10 @@ class Peserta extends CI_Controller
 	    'kode_pekerjaan' => set_value('kode_pekerjaan'),
 	);
    $tb_pendidikan=$this->Peserta_model->get_query("SELECT * FROM tb_pendidikan ")->result();
-                
+
    $data['tb_pendidikan']=$tb_pendidikan;
    $tb_pekerjaan=$this->Peserta_model->get_query("SELECT * FROM tb_pekerjaan ")->result();
-                
+
    $data['tb_pekerjaan']=$tb_pekerjaan;      $data['site_title'] = 'Peserta';
         $data['title'] = 'Tambahkan Data Peserta';
         $data['assign_js'] = 'peserta/js/index.js';
@@ -110,10 +124,10 @@ class Peserta extends CI_Controller
 		'kode_pekerjaan' => set_value('kode_pekerjaan', $row->kode_pekerjaan),
 	);
    $tb_pendidikan=$this->Peserta_model->get_query("SELECT * FROM tb_pendidikan ")->result();
-                                
+
    $data['tb_pendidikan']=$tb_pendidikan;
    $tb_pekerjaan=$this->Peserta_model->get_query("SELECT * FROM tb_pekerjaan ")->result();
-                                
+
    $data['tb_pekerjaan']=$tb_pekerjaan;$data['site_title'] = 'Peserta';
             $data['title'] = 'Ubah Data Peserta';
             $data['assign_js'] = 'peserta/js/index.js';
@@ -217,6 +231,19 @@ class Peserta extends CI_Controller
         xlsEOF();
         exit();
     }
+
+  public function jSurvei($kode_peserta='')
+  {
+    $data = $this->Peserta_model->get_query("SELECT * FROM v_survei m1 WHERE m1.kode_peserta_survei='".$kode_peserta."'")->result();
+
+    //echo json_encode($data);
+
+    $data['survei_data'] = $data;
+    $data['site_title'] = 'Jawaban Survey';
+    $data['title'] = 'Jawaban Survey';
+    $data['assign_js'] ='peserta/js/index.js';
+    load_view('peserta/tb_survei_list', $data);
+  }
 
 }
 

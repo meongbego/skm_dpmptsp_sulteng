@@ -126,7 +126,8 @@ class Admin extends CI_Controller
             $this->Admin_model->delete($id);
             $this->session->set_flashdata('message', '<div class="alert bg-success" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Berhasil Hapus Data <a href="#" class="pull-right"> <em class="fa fa-lg fa-close"></em></a></div>');
             redirect(site_url('admin'));
-        } else {
+        }
+        else {
             $this->session->set_flashdata('message', '<div class="alert bg-danger" role="alert"><em class="fa fa-lg fa-warning">&nbsp;</em> Data Tidak Ditemukan <a href="#" class="pull-right"> <em class="fa fa-lg fa-close"></em></a></div>');
             redirect(site_url('admin'));
         }

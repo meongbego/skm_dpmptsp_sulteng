@@ -161,6 +161,11 @@ switch (ENVIRONMENT)
 	// The controller function you wish to be called.
 	// $routing['function']	= '';
 
+/*
+* Date Config
+*/
+
+date_default_timezone_set('UTC');
 
 /*
  * -------------------------------------------------------------------

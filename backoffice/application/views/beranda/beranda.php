@@ -39,7 +39,7 @@
   <div class="col-xs-12 col-md-6 col-lg-6">
     <div class="panel panel-teal panel-widget">
       <div class="row no-padding">
-        <a href="<?php echo site_url('survei/hitung') ?>">
+        <a href="<?php echo site_url('survei') ?>">
           <div class="col-sm-3 col-lg-5 widget-left">
             <svg class="glyph stroked bag"><use xlink:href="#stroked-male-user"></use></svg>
           </div>

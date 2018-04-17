@@ -6,4 +6,7 @@
   $('#tablepeserta').dataTable({ //load list
     "lengthMenu": [[25, 50, -1], [25, 50, "All"]] //set here to set lenth list
   });
+  $('#tablesurvei').dataTable({ //load list
+    "lengthMenu": [[25, 50, -1], [25, 50, "All"]] //set here to set lenth list
+  });
 </script>

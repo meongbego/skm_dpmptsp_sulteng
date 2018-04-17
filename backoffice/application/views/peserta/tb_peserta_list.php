@@ -9,7 +9,7 @@
   <div class="col-md-8">
     <?php echo anchor(site_url('peserta/create'), 'Tambah Data', 'class="btn btn-success"'); ?>
 		<?php echo anchor(site_url('peserta/excel'), 'Excel', 'class="btn btn-warning"'); ?>
-	
+
   </div>
   <div class="col-md-4">
       <div id="message">
@@ -24,16 +24,14 @@
       <thead>
           <tr>
             <th style="text-align:center" width="40px">No</th>
-		    <th style="text-align:center">No Peserta</th>
-		    <th style="text-align:center">Umur</th>
-		    <th style="text-align:center">Jenkel</th>
-		    <th style="text-align:center">Kode Pendidikan</th>
-		    <th style="text-align:center">Kode Pekerjaan</th>
-		
+    		    <th style="text-align:center">Kode Peserta</th>
+    		    <th style="text-align:center">Umur</th>
+            <th style="text-align:center">Jenkel</th>
+    		    <th style="text-align:center">Jawaban</th>
             <th style="text-align:center" width="100px">Action</th>
           </tr>
       </thead>
-	
+
       <tbody>
           <?php
           $start = 0;
@@ -41,17 +39,18 @@
           {
               ?>
               <tr>
-		    <td><?php echo ++$start ?></td>
-		<td><?php echo $peserta->no_peserta ?></td>
-		<td><?php echo $peserta->umur ?></td>
-		<td><?php echo $peserta->jenkel ?></td>
-		<td><?php echo $peserta->kode_pendidikan ?></td>
-		<td><?php echo $peserta->kode_pekerjaan ?></td>
-		    <td style="text-align:center" width="100px">
-              <a href="<?php echo site_url('peserta/read/'.$peserta->id_peserta) ?>"><i class='fa fa-eye'></i></a> |
-              <a href="<?php echo site_url('peserta/update/'.$peserta->id_peserta) ?>"><i class='fa fa-pencil-square-o'></i></a> |
-              <a href="<?php echo site_url('peserta/delete/'.$peserta->id_peserta) ?>" onclick='javasciprt: return confirm("Are You Sure ?")'><i class='fa fa-trash-o'></i></a>
-	
+        		    <td><?php echo ++$start ?></td>
+            		<td><?php echo $peserta->kode_peserta ?></td>
+            		<td><?php echo $peserta->umur ?></td>
+                <td><?php echo $peserta->jenkel ?></td>
+            		<td style="text-align:center">
+                  <a class="btn btn-success btn-sm"href="<?php echo site_url('peserta/jsurvei/'.$peserta->kode_peserta_survei) ?>"><i class='fa fa-eye'></i></a>
+                </td>
+        		    <td style="text-align:center" width="100px">
+                  <a href="<?php echo site_url('peserta/read/'.$peserta->id_peserta_survei) ?>"><i class='fa fa-eye'></i></a> |
+                  <a href="<?php echo site_url('peserta/update/'.$peserta->id_peserta_survei) ?>"><i class='fa fa-pencil-square-o'></i></a> |
+                  <a href="<?php echo site_url('peserta/delete/'.$peserta->id_peserta_survei) ?>" onclick='javasciprt: return confirm("Are You Sure ?")'><i class='fa fa-trash-o'></i></a>
+                </td>
               </tr>
         <?php
     }
