@@ -8,7 +8,19 @@
 </div>
 <div class="row">
   <div class="col-md-8">
-		<?php echo anchor(site_url(), 'Excel', 'class="btn btn-warning"'); ?>
+    <div class="col-md-2"><?php echo anchor(site_url('survei/cetak_survei/'.$tahun), 'Excel', 'class="btn btn-warning btn-block"'); ?></div>
+    <form action="form" role="form">
+      <div class="col-md-4">
+        <input type="text" class="form-control datepicker">
+      </div>
+      <div class="col-md-4">
+        <input type="text" class="form-control datepicker">
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-primary btn-block">Filter</button>
+      </div>
+    </form>
+    
   </div>
   <div class="col-md-4">
       <div id="message">
@@ -25,6 +37,7 @@
           <th>No.</th>
           <th>Kode Peserta</th>
           <th>Umur</th>
+          <th>Tanggal survei</th>
           <?php foreach ($unsur_pelayanan as $key): ?>
           <th><?php echo $key->kode_kategori_pertanyaan ?></th>
           <?php endforeach; ?>
@@ -41,6 +54,7 @@
             <th><?php echo $start++ ?></th>
             <th><?php echo $value['kode_peserta_survei'] ?></th>
             <th><?php echo $value['umur'] ?> Tahun</th>
+            <th><?php echo $value['tgl_survei'] ?></th>
             <?php foreach ($value['data'] as $key1 => $value1): ?>
             <th><?php echo $value1['bobot'] ?></th>
             <?php endforeach; ?>

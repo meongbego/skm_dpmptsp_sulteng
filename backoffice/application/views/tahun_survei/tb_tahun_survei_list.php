@@ -24,9 +24,9 @@
       <thead>
           <tr>
             <th style="text-align:center" width="40px">No</th>
-		    <th style="text-align:center">Kode Tahun Survei</th>
-		    <th style="text-align:center">Nm Tahun</th>
-		
+            <th style="text-align:center">Kode Tahun Survei</th>
+            <th style="text-align:center">Nm Tahun</th>
+            <th style="text-align:center">Status Tahun</th>
             <th style="text-align:center" width="100px">Action</th>
           </tr>
       </thead>
@@ -41,6 +41,7 @@
 		    <td><?php echo ++$start ?></td>
 		<td><?php echo $tahun_survei->kode_tahun_survei ?></td>
 		<td><?php echo $tahun_survei->nm_tahun ?></td>
+		<td><?php echo $tahun_survei->status ?></td>
 		    <td style="text-align:center" width="100px">
               <a href="<?php echo site_url('tahun_survei/read/'.$tahun_survei->id_tahun_survei) ?>"><i class='fa fa-eye'></i></a> |
               <a href="<?php echo site_url('tahun_survei/update/'.$tahun_survei->id_tahun_survei) ?>"><i class='fa fa-pencil-square-o'></i></a> |

@@ -74,11 +74,11 @@
         <h3 class="box-title">Tentang Aplikasi</h3><hr>
       </div>
       <div class="box-body">
-        <p>Selamat datang di SKM versi 1.0, sistem ini ekslusif dibuat untuk memanajemen survei pada Dinas Penanaman Modal Dan Pelayanan Terpadu Satu Pintu Adapun Fitur SKM 1.0:</p>
+        <p>Selamat datang di SKM versi 0.9.0, sistem ini dibuat untuk menunjang sistem pelayanan pada kantor atau instansi berbagai fitur dari aplikasi ini adalah:</p>
         <ul>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>Manajemen Survei</li>
+          <li>Survei per periode</li>
+          <li>Rekap Survei dalam bentuk spreadsheet</li>
         </ul>
         <br>
         <p>Bila terdapat kesalahan, kerusakan dan ketidaksesuaian pada proses sistem atau ingin mengirimkan kritik dan saran serta bertanya seputar sistem ini, maka dapat langsung menghubungi kontak dibawah ini:</p>

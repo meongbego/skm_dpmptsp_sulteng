@@ -21,8 +21,8 @@ class Status_survei extends CI_Controller
         $data = array(
             'status_survei_data' => $status_survei
         );
-        $data['site_title'] = 'Status_survei';
-        $data['title'] = 'Status_survei';
+        $data['site_title'] = 'Master Data';
+        $data['title'] = 'Jenis Survei';
         $data['assign_js'] ='status_survei/js/index.js';
         load_view('status_survei/tb_status_survei_list', $data);
     }
@@ -36,8 +36,8 @@ class Status_survei extends CI_Controller
 		'kode_status_survei' => $row->kode_status_survei,
 		'nm_status_survei' => $row->nm_status_survei,
 	    );
-            $data['site_title'] = 'Status_survei';
-            $data['title'] = 'Status_survei';
+            $data['site_title'] = 'Master Data';
+            $data['title'] = 'Jenis Survei';
             $data['assign_js'] = 'status_survei/js/index.js';
             load_view('status_survei/tb_status_survei_read', $data);
         } else {
@@ -55,7 +55,7 @@ class Status_survei extends CI_Controller
 	    'id_status_survei' => set_value('id_status_survei'),
 	    'kode_status_survei' => set_value('kode_status_survei'),
 	    'nm_status_survei' => set_value('nm_status_survei'),
-	);      $data['site_title'] = 'Status_survei';
+	);      $data['site_title'] = 'Jenis Survei';
         $data['title'] = 'Tambahkan Data Status_survei';
         $data['assign_js'] = 'status_survei/js/index.js';
         load_view('status_survei/tb_status_survei_form', $data);

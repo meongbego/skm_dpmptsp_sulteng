@@ -1,7 +1,7 @@
 <header>
 <div class="header-content">
     <div class="header-content-inner">
-        <h1 id="homeHeading">SELAMAT DATANG DI SURVEI KEPUASAN MASYARAKAT <br>DPMPTSP SULTENG</h1>
+        <h1 id="homeHeading">SELAMAT DATANG DI SURVEI KEPUASAN MASYARAKAT <br>INSTANSI</h1>
         <hr>
         <p class="">
             <h4><i>Bantu Kami Meningkatkan Kualitas Pelayanan</i></h4>

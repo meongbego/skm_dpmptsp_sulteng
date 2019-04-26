@@ -22,7 +22,7 @@ class Beranda extends CI_Controller
   {
 
     $data['site_title'] = 'Beranda';
-    $data['title'] = 'Selamat Datang Di Back Office SKM DPMPTSP SULTENG';
+    $data['title'] = 'Selamat Datang Di Back Office';
     $data['assign_js'] = 'beranda/js/index.js';
     load_view('beranda/beranda', $data);
   }

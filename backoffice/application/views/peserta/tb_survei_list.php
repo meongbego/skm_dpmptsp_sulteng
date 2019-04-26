@@ -25,7 +25,6 @@
           <tr>
             <th style="text-align:center" width="40px">No</th>
     		    <th style="text-align:center">Kode Survei</th>
-    		    <th style="text-align:center">Kode Peserta Survei</th>
     		    <th style="text-align:center">Pertanyaan</th>
             <th style="text-align:center" width="100px">Action</th>
           </tr>
@@ -40,7 +39,6 @@
               <tr>
         		    <td><?php echo ++$start ?></td>
             		<td><?php echo $survei->kode_survei ?></td>
-            		<td><?php echo $survei->kode_peserta_survei ?></td>
             		<td><?php echo $survei->ket_pertanyaan ?></td>
   	            <td style="text-align:center" width="100px">
                   <a href="<?php echo site_url('survei/read/'.$survei->id_survei) ?>"><i class='fa fa-eye'></i></a> |

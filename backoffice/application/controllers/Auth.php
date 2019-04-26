@@ -21,7 +21,7 @@ class Auth extends CI_Controller {
 		//$this->login();
 		// echo base64_decode("MTIzNDU=");
 		if ($this->session->userdata('login')) {
-				redirect('admin');
+				redirect('beranda');
 		}
 		else {
 			$data['site_title'] = 'Please Login';
@@ -51,7 +51,7 @@ class Auth extends CI_Controller {
 
 						$this->session->sess_expiration = '1800'; //session timeout 15 minute
 						$this->session->set_userdata($session);
-						redirect('admin');
+						redirect('beranda');
 				}
 				else {
 					redirect('auth');

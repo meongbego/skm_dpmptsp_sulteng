@@ -518,3 +518,4 @@ $config['site_title2'] = 'SISTEM INFORMASI MANAJEMEN PERPUSTAKAAN';
 $config['meta_desc'] = 'SIAKAD TERINTEGRASI';
 $config['meta_key'] = 'sisfo, akademik, online, webservice, feeder, pddikti, importir';
 $config['meta_author'] = 'sofyan saputra';
+$config['path_temps'] = 'temps/';

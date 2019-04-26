@@ -235,9 +235,6 @@ class Peserta extends CI_Controller
   public function jSurvei($kode_peserta='')
   {
     $data = $this->Peserta_model->get_query("SELECT * FROM v_survei m1 WHERE m1.kode_peserta_survei='".$kode_peserta."'")->result();
-
-    //echo json_encode($data);
-
     $data['survei_data'] = $data;
     $data['site_title'] = 'Jawaban Survey';
     $data['title'] = 'Jawaban Survey';

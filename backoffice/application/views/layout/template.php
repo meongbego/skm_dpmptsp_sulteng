@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SKM | DPMPTSP</title>
+<title>SKM</title>
 
 <link href="<?php echo base_url('assets/css/bootstrap.min.css') ?>" rel="stylesheet">
 <link href="<?php echo base_url('assets/plugins/dataTables/css/dataTables.bootstrap.min.css') ?>" rel="stylesheet">
@@ -23,7 +23,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><span>DPMPTSP</span> SULTENG</a>
+				<a class="navbar-brand" href="#"><span>SKM</span> DATA</a>
 				<ul class="user-menu">
 					<li class="dropdown pull-right">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> User <span class="caret"></span></a>

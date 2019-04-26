@@ -40,7 +40,7 @@
                         <select class="form-control" name="tahun_survei" required>
                             <option value="">-------- Pilih Salah Satu --------</option>
                             <?php foreach ($dt_tahun as $key): ?>
-                              <?php if (date('Y') == $key->kode_tahun_survei): ?>
+                              <?php if ($key->status == "Y"): ?>
                                 <option value="<?php echo $key->kode_tahun_survei ?>" selected><?php echo $key->nm_tahun ?></option>
                               <?php else: ?>
                                 <option value="<?php echo $key->kode_tahun_survei ?>"><?php echo $key->nm_tahun ?></option>

@@ -21,8 +21,8 @@ class Tahun_survei extends CI_Controller
         $data = array(
             'tahun_survei_data' => $tahun_survei
         );
-        $data['site_title'] = 'Tahun_survei';
-        $data['title'] = 'Tahun_survei';
+        $data['site_title'] = 'Master Data';
+        $data['title'] = 'Periode Tahun Survei';
         $data['assign_js'] ='tahun_survei/js/index.js';
         load_view('tahun_survei/tb_tahun_survei_list', $data);
     }
@@ -32,12 +32,13 @@ class Tahun_survei extends CI_Controller
         $row = $this->Tahun_survei_model->get_by_id($id);
         if ($row) {
             $data = array(
-		'id_tahun_survei' => $row->id_tahun_survei,
-		'kode_tahun_survei' => $row->kode_tahun_survei,
-		'nm_tahun' => $row->nm_tahun,
-	    );
+            'id_tahun_survei' => $row->id_tahun_survei,
+            'kode_tahun_survei' => $row->kode_tahun_survei,
+            'nm_tahun' => $row->nm_tahun,
+            'status' => $row->status,
+            );
             $data['site_title'] = 'Tahun_survei';
-            $data['title'] = 'Tahun_survei';
+            $data['title'] = 'Periode Tahun Survei';
             $data['assign_js'] = 'tahun_survei/js/index.js';
             load_view('tahun_survei/tb_tahun_survei_read', $data);
         } else {
@@ -52,11 +53,13 @@ class Tahun_survei extends CI_Controller
       $data = array(
             'button' => 'Create',
             'action' => site_url('tahun_survei/create_action'),
-	    'id_tahun_survei' => set_value('id_tahun_survei'),
-	    'kode_tahun_survei' => set_value('kode_tahun_survei'),
-	    'nm_tahun' => set_value('nm_tahun'),
-	);      $data['site_title'] = 'Tahun_survei';
-        $data['title'] = 'Tambahkan Data Tahun_survei';
+            'id_tahun_survei' => set_value('id_tahun_survei'),
+            'kode_tahun_survei' => set_value('kode_tahun_survei'),
+            'nm_tahun' => set_value('nm_tahun'),
+            'status' => set_value('status'),
+        );      
+        $data['site_title'] = 'Tahun_survei';
+        $data['title'] = 'Tambahkan Data Periode Tahun Survei';
         $data['assign_js'] = 'tahun_survei/js/index.js';
         load_view('tahun_survei/tb_tahun_survei_form', $data);
     }
@@ -71,6 +74,7 @@ class Tahun_survei extends CI_Controller
             $data = array(
 		'kode_tahun_survei' => $this->input->post('kode_tahun_survei',TRUE),
 		'nm_tahun' => $this->input->post('nm_tahun',TRUE),
+		'status' => $this->input->post('status',TRUE),
 	    );
 
             $this->Tahun_survei_model->insert($data);
@@ -90,8 +94,9 @@ class Tahun_survei extends CI_Controller
 		'id_tahun_survei' => set_value('id_tahun_survei', $row->id_tahun_survei),
 		'kode_tahun_survei' => set_value('kode_tahun_survei', $row->kode_tahun_survei),
 		'nm_tahun' => set_value('nm_tahun', $row->nm_tahun),
+		'status' => set_value('status', $row->status),
 	);$data['site_title'] = 'Tahun_survei';
-            $data['title'] = 'Ubah Data Tahun_survei';
+            $data['title'] = 'Ubah Data Periode Tahun Survei';
             $data['assign_js'] = 'tahun_survei/js/index.js';
             load_view('tahun_survei/tb_tahun_survei_form', $data);
         } else {
@@ -110,6 +115,7 @@ class Tahun_survei extends CI_Controller
             $data = array(
 		'kode_tahun_survei' => $this->input->post('kode_tahun_survei',TRUE),
 		'nm_tahun' => $this->input->post('nm_tahun',TRUE),
+		'status' => $this->input->post('status',TRUE),
 	    );
 
             $this->Tahun_survei_model->update($this->input->post('id_tahun_survei', TRUE), $data);
@@ -136,6 +142,7 @@ class Tahun_survei extends CI_Controller
     {
 	$this->form_validation->set_rules('kode_tahun_survei', 'kode tahun survei', 'trim|required');
 	$this->form_validation->set_rules('nm_tahun', 'nm tahun', 'trim|required');
+	$this->form_validation->set_rules('status', 'Status', 'trim|required');
 
 	$this->form_validation->set_rules('id_tahun_survei', 'id_tahun_survei', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');

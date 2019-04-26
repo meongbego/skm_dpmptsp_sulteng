@@ -14,6 +14,14 @@
             <label class="form-label" for="varchar">Nm Tahun <?php echo form_error('nm_tahun') ?></label>
             <input type="text" class="form-control" name="nm_tahun" id="nm_tahun" placeholder="Nm Tahun" value="<?php echo $nm_tahun; ?>" />
         </div>
+        <div class="form-group">
+            <label class="form-label" for="varchar">Status <?php echo form_error('status') ?></label>
+            <select name="status" id="statys" class="form-control" required>
+                <option value="">-------</option>
+                <option value="N">N</option>
+                <option value="Y">Y</option>
+            </select>
+        </div>
 	    <div class="form-actions"><input type="hidden" name="id_tahun_survei" value="<?php echo $id_tahun_survei; ?>" /> 
 	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 
 	    <a href="<?php echo site_url('tahun_survei') ?>" class="btn btn-default">Cancel</a>
