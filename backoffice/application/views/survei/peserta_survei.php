@@ -9,15 +9,15 @@
 <div class="row">
   <div class="col-md-8">
     <div class="col-md-2"><?php echo anchor(site_url('survei/cetak_survei/'.$tahun), 'Excel', 'class="btn btn-warning btn-block"'); ?></div>
-    <form action="form" role="form">
+    <form role="form" action="<?php echo site_url('survei/hitung_survei/'.$tahun) ?>" method="POST">
       <div class="col-md-4">
-        <input type="text" class="form-control datepicker">
+        <input type="text" class="form-control datepicker" name="start_date">
       </div>
       <div class="col-md-4">
-        <input type="text" class="form-control datepicker">
+        <input type="text" class="form-control datepicker" name="finish_date">
       </div>
       <div class="col-md-2">
-        <button class="btn btn-primary btn-block">Filter</button>
+        <input type="submit" class="btn btn-primary btn-block" name="btn_filter" value="Filter">
       </div>
     </form>
     

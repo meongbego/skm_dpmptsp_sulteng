@@ -98,6 +98,7 @@ switch (ENVIRONMENT)
  * Set the path if it is not in the same directory as this file.
  */
 	$system_path = 'system';
+	date_default_timezone_set('Asia/Jakarta');
 
 /*
  *---------------------------------------------------------------

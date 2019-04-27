@@ -16,15 +16,17 @@ class Survei extends CI_Controller {
 		$data_status = $this->App_model->get_query("SELECT * FROM tb_status_survei")->result();
 		$data_pegawai = $this->App_model->get_query("SELECT * FROM tb_pegawai")->result();
 
+
+		
+		
 		$data['breadcrumb']='Survei';
 		$data['title']='SKM DPMPTSP';
-
 		$data['dt_pendidikan']=$data_pendidikan;
 		$data['dt_pekerjaan']=$data_pekerjaan;
 		$data['dt_tahun']=$data_tahun;
 		$data['dt_pegawai']=$data_pegawai;
 		$data['dt_status']=$data_status;
-		$data['assign_js'] = 'survei/js/index.js';
+		$data['assign_js'] = 'survei/js/index.js';	  
 		load_beranda('survei/survei',$data);
 	}
 	public function save_biodata()

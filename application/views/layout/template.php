@@ -61,6 +61,9 @@
                     <li>
                         <a class="page-scroll" href="#about">Privasi</a>
                     </li>
+                    <li>
+                        <a class="page-scroll" href="#service">Survey</a>
+                    </li>
                 <?php else: ?>
                     <li>
                         <a class="page-scroll" href="<?php echo site_url('') ?>">Privasi</a>
@@ -83,11 +86,11 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Let's Get In Contact!</h2>
                     <hr class="primary">
-                    <p>DPMPTSP <b>Sulawesi Tengah</b></p>
+                    <p>Sofyan <b>Saputra</b></p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <i class="fa fa-phone fa-3x sr-contact"></i>
-                    <p>xxxx</p>
+                    <p>081247930699</p>
                 </div>
             </div>
         </div>

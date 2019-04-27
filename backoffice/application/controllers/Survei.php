@@ -32,12 +32,17 @@ class Survei extends CI_Controller
 
     public function hitung_survei($tahun='')
     {
-      // untuk filtering berdasarkan tanggal
-      // echo "SELECT * FROM v_peserta_survei WHERE kode_tahun_survei='2017' AND (tgl_survei>='2017-01-01' and tgl_survei<='2017-12-30')";
-      // end
-      $peserta_survey = $this->Survei_model->get_query("SELECT * FROM v_peserta_survei WHERE kode_tahun_survei='".$tahun."'")->result();
-      $unsur_pelayanan = $this->Survei_model->get_query("SELECT * FROM tb_kategori_pertanyaan ")->result();
-
+      $a = $this->input->post('btn_filter',TRUE);
+      if ( $a == 'Filter') {
+        $start_date = $this->input->post("start_date");
+        $finish_date = $this->input->post("finish_date");
+        $peserta_survey = $this->Survei_model->get_query("SELECT * FROM v_peserta_survei WHERE kode_tahun_survei='".$tahun."' AND (tgl_survei>='".$start_date."' and tgl_survei<='".$finish_date."')")->result();
+        $unsur_pelayanan = $this->Survei_model->get_query("SELECT * FROM tb_kategori_pertanyaan ")->result();        
+      }
+      else{
+        $peserta_survey = $this->Survei_model->get_query("SELECT * FROM v_peserta_survei WHERE kode_tahun_survei='".$tahun."'")->result();
+        $unsur_pelayanan = $this->Survei_model->get_query("SELECT * FROM tb_kategori_pertanyaan ")->result();        
+      }
       $jumlah_peserta = count($peserta_survey);
       $jumlah_unsur = count($unsur_pelayanan);
       $data_peserta=array();
@@ -102,6 +107,7 @@ class Survei extends CI_Controller
       $data['assign_js'] ='survei/js/index.js';
       load_view('survei/peserta_survei', $data);
     }
+    
 
     public function cetak_survei($tahun=''){
       $this->benchmark->mark('mulai');
@@ -188,7 +194,6 @@ class Survei extends CI_Controller
       
       $baseRow1 = $hitung_row;
       $arr_az = range('D','Q');
-      $a=0;
 
       $ket = array(
         'nrr_tertimbang' => "NRR Tertimbang / Unsur",
@@ -196,11 +201,10 @@ class Survei extends CI_Controller
         'total_bobot' => "Semua Nilai Unsur",
         'unsur_pelayanan' => "Keterangan",
       );
-      echo json_encode($data_hasil_hitung);
       foreach($ket as $k => $kk){
         $row1 = $baseRow1 + $k;
         $objPHPExcel->getActiveSheet()->insertNewRowBefore($row1,1);
-        $objPHPExcel->getActiveSheet()->setCellValue('A'.$row1, $kk)
+        $objPHPExcel->getActiveSheet()->setCellValue('A'.$row1, "")
                 ->setCellValue('B'.$row1, $kk);
 
         foreach ($arr_az as $chr => $cr) {

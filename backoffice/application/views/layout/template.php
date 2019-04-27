@@ -75,7 +75,7 @@
 					</li>
 					<li>
 						<a class="" href="<?php echo site_url('status_survei') ?>">
-							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Status Survei
+							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Jenis Survei
 						</a>
 					</li>
 					<li>

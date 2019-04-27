@@ -22,7 +22,7 @@ class Peserta_survei extends CI_Controller
             'peserta_survei_data' => $peserta_survei
         );
         $data['site_title'] = 'Peserta_survei';
-        $data['title'] = 'Peserta_survei';
+        $data['title'] = 'Peserta Surver';
         $data['assign_js'] ='peserta_survei/js/index.js';
         load_view('peserta_survei/tb_peserta_survei_list', $data);
     }
@@ -41,7 +41,7 @@ class Peserta_survei extends CI_Controller
 		'kode_status_survei' => $row->kode_status_survei,
 	    );
             $data['site_title'] = 'Peserta_survei';
-            $data['title'] = 'Peserta_survei';
+            $data['title'] = 'Peserta Surver';
             $data['assign_js'] = 'peserta_survei/js/index.js';
             load_view('peserta_survei/tb_peserta_survei_read', $data);
         } else {

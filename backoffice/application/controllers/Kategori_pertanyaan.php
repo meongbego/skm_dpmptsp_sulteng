@@ -22,7 +22,7 @@ class Kategori_pertanyaan extends CI_Controller
             'kategori_pertanyaan_data' => $kategori_pertanyaan
         );
         $data['site_title'] = 'Kategori_pertanyaan';
-        $data['title'] = 'Kategori_pertanyaan';
+        $data['title'] = 'Kategori Pertanyaan';
         $data['assign_js'] ='kategori_pertanyaan/js/index.js';
         load_view('kategori_pertanyaan/tb_kategori_pertanyaan_list', $data);
     }
@@ -37,7 +37,7 @@ class Kategori_pertanyaan extends CI_Controller
     'nm_kategori_pertanyaan' => $row->nm_kategori_pertanyaan,
 	    );
             $data['site_title'] = 'Kategori_pertanyaan';
-            $data['title'] = 'Kategori_pertanyaan';
+            $data['title'] = 'Kategori Pertanyaan';
             $data['assign_js'] = 'kategori_pertanyaan/js/index.js';
             load_view('kategori_pertanyaan/tb_kategori_pertanyaan_read', $data);
         } else {
